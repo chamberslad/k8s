@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-service
+spec:
+  type: NodePort
+  ports:
+    - targetPort: 53
+      port: 53
+      nodePort: 30009
+      name: http
+  selector:
+    app: pihole
+    type: dns
