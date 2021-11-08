@@ -8,8 +8,10 @@ SYSLIVE contains running config for lab cluster.
 
 Remember :)
 ---
+
 apiVersion:
 kind:
 metadata:
 spec:
+
 ---
