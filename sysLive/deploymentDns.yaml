@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dns
+  labels:
+    app: pihole
+    type: dns
+spec:
+  template:
+    metadata:
+      name: pihole
+      labels:
+        app: pihole
+        type: dns
+    spec:
+      containers:
+        - name: pihole-container
+          image: pihole/pihole:latest
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pihole
