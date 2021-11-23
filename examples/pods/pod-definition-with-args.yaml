@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+  namespace: prod
+  labels:
+    app: myapp
+    type: front-end
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx
+      # Pass value and over-ride entrypoint (overrides ENTRYPOINT in dockerfile)
+      command: ["sleep2.0"]
+      # Pass argument to entrypoint / pod (overrides CMD in dockerfile)
+      args: ["10"]
