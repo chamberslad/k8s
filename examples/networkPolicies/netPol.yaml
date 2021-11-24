@@ -18,10 +18,13 @@ spec:
         - 172.17.1.0/24
     - namespaceSelector:
         matchLabels:
-          project: myproject
+          project: live
     - podSelector:
         matchLabels:
           role: frontend
+      namespaceSelector:
+        matchLabels:
+          project: prod
     ports:
     - protocol: TCP
       port: 6379
